@@ -1,0 +1,15 @@
+{% extends "::layout.html.twig" %}
+
+{% block title %}
+  Liste des contacts - {{ parent() }}
+{% endblock %}
+
+{% block body %}
+
+{% block fos_user_content %}
+<div>
+  <h2> Inscription </h2>
+  {% include "FOSUserBundle:Registration:register_content.html.twig" %}
+</div>
+{% endblock fos_user_content %}
+{% endblock %}

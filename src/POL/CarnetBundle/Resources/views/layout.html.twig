@@ -1,0 +1,15 @@
+{% extends "::layout.html.twig" %}
+
+{% block title %}
+  Liste des contacts - {{ parent() }}
+{% endblock %}
+
+{% block body %}
+  <h1>Les contacts</h1>
+  <hr>
+
+  {# Nouveau bloc pour les vues du bundle #}
+  {% block polcarnet_body %}
+  {% endblock %}
+
+{% endblock %}

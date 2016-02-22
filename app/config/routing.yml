@@ -1,0 +1,11 @@
+pol_user:
+    resource: "@POLUserBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+pol_carnet:
+    resource: "@POLCarnetBundle/Resources/config/routing.yml"
+    prefix:   /
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"

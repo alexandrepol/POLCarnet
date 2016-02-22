@@ -1,0 +1,21 @@
+{% extends "POLCarnetBundle::layout.html.twig" %}
+
+{% block title %}
+  Accueil - {{ parent() }}
+{% endblock %}
+
+{% block polcarnet_body %}
+  {% if app.user and contact.0.usernameId.id == app.user.id  %}
+    <h2>Pseudo : {{ contact.0.contactId.username }}</h2>
+    <ul>
+      <li> E-mail : {{ contact.0.contactId.email }}</li>
+      <li> Téléphone : {{ contact.0.contactId.phone }}</li>
+      <li> Adresse : {{ contact.0.contactId.adress }}</li>
+      <li> Site Web : {{ contact.0.contactId.website }}</li>
+    </ul>
+  {% elseif  app.user and contact.0.usernameId.id != app.user.id %}
+    <p>Cet utilisateur n'est pas dans votre liste de contact.</p>
+  {% else %}
+    <p> Vous devez vous connecter pour utiliser le service.</p>
+  {% endif %}
+{% endblock %}

@@ -1,0 +1,19 @@
+pol_carnet_home:
+    path:     /
+    defaults: {_controller: POLCarnetBundle:ListeContact:index }
+
+pol_carnet_add:
+    path:     /add
+    defaults: {_controller: POLCarnetBundle:ListeContact:add }
+
+pol_carnet_delete:
+    path:     /delete/{id}
+    defaults: {_controller: POLCarnetBundle:ListeContact:delete }
+    requirements:
+        id: \d+
+
+pol_carnet_view:
+    path:     /details/{id}
+    defaults: {_controller: POLCarnetBundle:ListeContact:view }
+    requirements:
+        id: \d+

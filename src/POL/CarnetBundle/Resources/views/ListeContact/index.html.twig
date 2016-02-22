@@ -1,0 +1,31 @@
+{% extends "POLCarnetBundle::layout.html.twig" %}
+
+{% block title %}
+  Accueil - {{ parent() }}
+{% endblock %}
+
+{% block polcarnet_body %}
+  <h2>Liste des contacts</h2>
+  {% if app.user %}
+  <ul>
+    {% for contact in listContacts %}
+      <li>
+        <a href="{{ path('pol_carnet_view', {'id': contact.contactId.id}) }}" >
+          {{ contact.contactId.username }} | {{ contact.contactId.email }}
+        </a>
+        <br>
+        <a href="{{ path('pol_carnet_delete', {'id': contact.id }) }}" class="btn btn-default">
+          <i class="glyphicon glyphicon-trash"></i>
+          Supprimer le contact
+         </a>
+      </li>
+    {% else %}
+      <li>
+        Pas encore de contact
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p> Vous devez vous connecter pour utiliser le service </p>
+  {% endif %}
+{% endblock %}
